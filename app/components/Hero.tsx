@@ -52,10 +52,10 @@ const Hero: React.FC = () => {
   }, [text, phraseIndex, isDeleting, isWaiting]);
 
   return (
-    <section className="min-h-screen flex items-center py-20">
-      <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between">
+    <section className="min-h-screen flex items-center py-24">
+      <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
         <motion.div
-          className="md:w-3/5 space-y-6"
+          className="md:w-3/5 space-y-6 mt-24"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -97,10 +97,10 @@ const Hero: React.FC = () => {
         </motion.div>
 
         <motion.div
-          className="md:w-2/5 mb-8 md:mb-0"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
+          className="md:w-2/5 mb-8 md:mb-0 -mt-24"
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1.5, scale: 1 }}
+          transition={{ duration: 5 }}
         >
           <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto">
             <Image

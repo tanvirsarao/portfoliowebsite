@@ -10,12 +10,12 @@ const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-gray-900/50">
       <div className="container mx-auto px-4">
-        <InteractiveTitle className="text-4xl font-bold mb-12 text-center text-white w-full">
+        <InteractiveTitle className="text-6xl font-bold mb-12 text-center text-white w-full">
           Contact Me
         </InteractiveTitle>
         <div className="flex justify-center space-x-12 mb-12">
           <a
-            href="https://github.com/yourusername"
+            href="https://github.com/tanvirsarao"
             target="_blank"
             rel="noopener noreferrer"
             className="text-6xl text-gray-300 hover:text-white transition-colors duration-300"
@@ -23,7 +23,7 @@ const Contact: React.FC = () => {
             <FaGithub />
           </a>
           <a
-            href="https://linkedin.com/in/yourusername"
+            href="https://linkedin.com/in/tanvir-sarao"
             target="_blank"
             rel="noopener noreferrer"
             className="text-6xl text-gray-300 hover:text-white transition-colors duration-300"
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
             <FaLinkedin />
           </a>
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:tsarao@uwaterloo.ca"
             className="text-6xl text-gray-300 hover:text-white transition-colors duration-300"
           >
             <MdEmail />
@@ -41,8 +41,8 @@ const Contact: React.FC = () => {
       <footer className="text-center mt-8">
         <button className="relative group">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
-            Crafted with Next.js and Tailwind CSS, deployed on Ubuntu Server and
-            built with{' '}
+            Crafted with Next.js and Tailwind CSS, animated with Framer Motion,
+            deployed on Ubuntu Server and built with{' '}
             <motion.span
               className="inline-block text-red-500"
               animate={{
@@ -59,8 +59,8 @@ const Contact: React.FC = () => {
             by <strong>Tanvir Sarao</strong>
           </span>
           <span className="absolute inset-0 text-gray-400 group-hover:opacity-0 transition-opacity duration-1000">
-            Crafted with Next.js and Tailwind CSS, deployed on Ubuntu Server and
-            built with{' '}
+            Crafted with Next.js and Tailwind CSS, animated with Framer Motion,
+            deployed on Ubuntu Server and built with{' '}
             <motion.span
               className="inline-block text-red-500"
               animate={{

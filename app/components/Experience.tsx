@@ -17,79 +17,72 @@ const ExperienceTag = ({ name, color }: { name: string; color: string }) => (
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: 'Senior Developer',
-      company: 'Tech Corp',
-      period: '2020 - Present',
+      title: 'Junior Software Engineer',
+      company: 'Agent Edge',
+      period: 'September 2024 - Present',
       description: [
-        'Led development of multiple projects and mentored junior developers.',
-        'Implemented new technologies to improve development efficiency.',
-        'Conducted code reviews and maintained high code quality standards.',
+        'Sample jot notes **bold**.',
+        'Sample jot notes **bold**.',
+        'Sample jot notes **bold**.',
       ],
       skills: [
         { name: 'React', color: 'bg-blue-500' },
         { name: 'Node.js', color: 'bg-green-600' },
         { name: 'AWS', color: 'bg-yellow-500' },
       ],
-      image: '/placeholder.svg?height=100&width=100',
-      website: 'https://techcorp.com',
+      image: '/AgentEdgeLogo.JPG?height=100&width=100',
+      website: 'https://agentedge.ca',
     },
     {
-      title: 'Full Stack Developer',
-      company: 'Innovative Startup',
-      period: '2018 - 2020',
+      title: 'Software Engineer',
+      company: 'Hackathons Canada',
+      period: 'November 2024 - Present',
       description: [
-        'Developed and maintained web applications using modern technologies.',
-        'Collaborated with cross-functional teams to deliver high-quality software.',
-        'Optimized application performance and improved user experience.',
+        'Sample jot notes **bold**.',
+        'Sample jot notes **bold**.',
+        'Sample jot notes **bold**.',
       ],
       skills: [
         { name: 'Vue.js', color: 'bg-green-500' },
         { name: 'Express', color: 'bg-gray-600' },
         { name: 'MongoDB', color: 'bg-green-700' },
       ],
-      image: '/placeholder.svg?height=100&width=100',
-      website: 'https://innovativestartup.com',
+      image: '/hackathonsCanadaLogo.jpg?height=100&width=100',
+      website: 'https://hackathonscanada.com/',
     },
     {
-      title: 'Junior Developer',
-      company: 'Software Solutions Inc.',
-      period: '2016 - 2018',
+      title: 'Software Engineering Instructor',
+      company: 'Ultimate Coders',
+      period: 'July 2023 - August 2023',
       description: [
-        'Assisted in the development of client projects and internal tools.',
-        'Gained experience in full-stack development and agile methodologies.',
-        'Participated in daily stand-ups and sprint planning meetings.',
+        'Guided **10+** students weekly in learning various programming concepts such as Data Structures and Recursion in languages including Python and JavaScript.',
+        'Led weekly coding classes, overlooked **10+** coding challenges and assignments and improved student project completion rates by **over 25%**.',
       ],
       skills: [
-        { name: 'JavaScript', color: 'bg-yellow-400' },
-        { name: 'PHP', color: 'bg-purple-600' },
-        { name: 'MySQL', color: 'bg-blue-600' },
+        { name: 'Python', color: 'bg-yellow-400' },
+        { name: 'Javascript', color: 'bg-purple-600' },
       ],
-      image: '/placeholder.svg?height=100&width=100',
-      website: 'https://softwaresolutions.com',
+      image: '/ultimateCodersLogo.png?height=100&width=100',
+      website: 'https://www.ultimatecoders.ca/',
     },
     {
-      title: 'Intern',
-      company: 'Tech Innovations',
-      period: '2015 - 2016',
+      title: 'Project Coordinator',
+      company: 'Trillium Health Partners',
+      period: 'July 2022 - August 2023',
       description: [
-        'Gained hands-on experience in software development and agile methodologies.',
-        'Assisted in bug fixing and feature implementation for web applications.',
-        'Participated in team meetings and contributed to project discussions.',
+        'Organized and hosted a photovoice exhibit with lead researchers to promote physical activity and healthy living, **surpassing KPI targets by 31%**.',
+        'Coordinated a pool of **20+** youth for research assessment, led focus groups with **15+** speakers, and managed a research exhibit attracting **300+ attendees, $2000 in sponsorships** and 10 vendors.',
       ],
-      skills: [
-        { name: 'HTML', color: 'bg-red-500' },
-        { name: 'CSS', color: 'bg-blue-400' },
-        { name: 'JavaScript', color: 'bg-yellow-400' },
-      ],
-      image: '/placeholder.svg?height=100&width=100',
-      website: 'https://techinnovations.com',
+      skills: [],
+      image: '/THPLogo.png?height=100&width=100',
+      website: 'https://www.thp.ca/Pages/Home.aspx',
     },
   ];
 
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto px-4">
-        <InteractiveTitle className="text-4xl font-bold mb-12 text-white w-full">
+        <InteractiveTitle className="text-6xl font-bold mb-12 text-white w-full">
           Experience
         </InteractiveTitle>
         <div className="relative">
@@ -167,7 +160,15 @@ const ExperienceItem: React.FC<{ experience: any; index: number }> = ({
                 key={index}
                 className="text-sm leading-snug tracking-wide text-gray-300 text-opacity-100 mb-1"
               >
-                {item}
+                {item.split('**').map((part, i) =>
+                  i % 2 === 0 ? (
+                    part
+                  ) : (
+                    <span key={i} className="font-bold text-white">
+                      {part}
+                    </span>
+                  )
+                )}
               </li>
             ))}
           </ul>

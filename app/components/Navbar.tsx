@@ -15,10 +15,11 @@ const Navbar = () => {
             {letters.map((letter, index) => (
               <motion.span
                 key={index}
-                className="bg-gradient-to-r from-blue-200 to-purple-200 bg-clip-text text-transparent hover:text-white transition-colors duration-300"
+                className="font-orbitron font-black text-3xl bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:text-white transition-colors duration-300"
                 whileHover={{
                   scale: 1.2,
-                  transition: { duration: 0.2 },
+                  rotate: 360,
+                  transition: { duration: 0.3 },
                 }}
                 whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: -20 }}
@@ -59,7 +60,14 @@ const Navbar = () => {
             experience
           </Link>
           <Link
-            href="#contact"
+            href="#testimonials"
+            className="text-xl text-gray-300 hover:text-white transition-colors duration-200"
+          >
+            testimonials
+          </Link>
+
+          <Link
+            href="#testimonials"
             className="text-xl text-gray-300 hover:text-white transition-colors duration-200"
           >
             contact
