@@ -35,22 +35,25 @@ const Projects: React.FC = () => {
         { name: 'Express.js', color: 'bg-gray-600' },
         { name: 'MySQL', color: 'bg-blue-600' },
       ],
-      image: '/tripincento.png',
+      image: '/placeholder.svg?height=200&width=400',
       github: 'https://github.com/yourusername/tripincento',
     },
     {
       title: 'AI Financial Portfolio Advisor - 3rd Place Winner',
       description: [
-        'Description with **bold** text.',
-        'Another line with **emphasis** on key points.',
+        'Built automated stock filtering pipeline to select 24 optimal equities from US/CAD markets, leveraging volatility metrics and volume data to ensure portfolio stability.',
+        'Utilized **LSTM neural networks** with 30 hidden units and MinMaxScaler normalization, achieving 0.6255% return during one week competition period while maintaining optimal Sharpe ratios.',
+        'Implemented **multi-threaded** Monte Carlo simulation with 10,000 concurrent iterations, handling real-time currency conversions and minimizing broker fees across a $1M portfolio.',
+        'Placed **3rd** out of 25+ competitors.',
       ],
       tags: [
         { name: 'Python', color: 'bg-blue-600' },
-        { name: 'Django', color: 'bg-green-700' },
-        { name: 'PostgreSQL', color: 'bg-blue-400' },
+        { name: 'PyTorch', color: 'bg-green-700' },
+        { name: 'Pandas', color: 'bg-blue-400' },
+        { name: 'NumPy', color: 'bg-orange-400' },
       ],
-      image: '/placeholder.svg?height=200&width=400',
-      github: 'https://github.com/yourusername/project2',
+      image: '/CFMProject.PNG?height=200&width=400',
+      github: 'https://github.com/tanvirsarao/stock-robo-advisor',
     },
     {
       title: 'TripIncento',
@@ -84,7 +87,7 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <InteractiveTitle
-          className="text-4xl font-bold mb-12 text-white"
+          className="text-6xl font-bold mb-12 text-white"
           alignment="center"
         >
           Projects

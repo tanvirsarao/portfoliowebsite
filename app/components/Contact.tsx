@@ -41,8 +41,8 @@ const Contact: React.FC = () => {
       <footer className="text-center mt-8">
         <button className="relative group">
           <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000">
-            Crafted with Next.js and Tailwind CSS, animated with Framer Motion,
-            deployed on Ubuntu Server and built with{' '}
+            Crafted with Next.js, React and Tailwind CSS, animated with Framer
+            Motion, deployed on Ubuntu Server and built with{' '}
             <motion.span
               className="inline-block text-red-500"
               animate={{
@@ -59,8 +59,8 @@ const Contact: React.FC = () => {
             by <strong>Tanvir Sarao</strong>
           </span>
           <span className="absolute inset-0 text-gray-400 group-hover:opacity-0 transition-opacity duration-1000">
-            Crafted with Next.js and Tailwind CSS, animated with Framer Motion,
-            deployed on Ubuntu Server and built with{' '}
+            Crafted with Next.js, React and Tailwind CSS, animated with Framer
+            Motion, deployed on Ubuntu Server and built with{' '}
             <motion.span
               className="inline-block text-red-500"
               animate={{

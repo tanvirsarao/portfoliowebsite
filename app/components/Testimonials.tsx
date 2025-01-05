@@ -17,7 +17,7 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: 'Dr. Dianne Fierheller',
     position: 'Project Co-Lead @ Trillium Health Partners',
-    text: 'I enthusiastically support Tanvir. He has the passion and commitment to continue to develop his leadership skills to create change within his community.',
+    text: 'Tanvir has a warm and friendly rapport with people of all ages and can connect, fit in, and apply himself accordingly. Tanvir’s persona is one of integrity, grit, and resilience. He is a truly dedicated individual and accomplishes tasks with great initiative and focus, all while maintaining a positive attitude.',
     image: '/dianneFierheller.jpg',
   },
   {
@@ -25,15 +25,15 @@ const testimonials: Testimonial[] = [
     name: 'James Thompson, Ph. D.',
     position:
       'Co-Director, Computing and Financial Management at University of Waterloo',
-    text: "Tanvir's ability to develop strong relationships with others and to handle multiple projects and priorities make him a great candidate in any application.",
+    text: 'Placeholder',
     image: '/jamesThompson.jpg',
   },
   {
     id: 3,
     name: 'Puneet Kumar',
     position: 'Senior Engineer at Agent Edge',
-    text: 'Tanvir is an innovator and entrepreneur as he saw the role of environmental-based citizen science in improving communities.',
-    image: '/jamesCao.jpg',
+    text: 'Placeholder',
+    image: '/placeholder.svg',
   },
 ];
 
@@ -51,7 +51,7 @@ const Testimonials: React.FC = () => {
         {/* Vertical dotted line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-[80%] top-[20%] border-l-2 border-dashed border-purple-400/30" />
 
-        <div className="max-w-4xl mx-auto space-y-16">
+        <div className="max-w-6xl mx-auto space-y-16">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
