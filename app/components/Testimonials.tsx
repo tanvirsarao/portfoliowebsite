@@ -18,7 +18,7 @@ const testimonials: Testimonial[] = [
     name: 'Dr. Dianne Fierheller',
     position: 'Project Co-Lead @ Trillium Health Partners',
     text: 'Tanvir has a warm and friendly rapport with people of all ages and can connect, fit in, and apply himself accordingly. Tanvir’s persona is one of integrity, grit, and resilience. He is a truly dedicated individual and accomplishes tasks with great initiative and focus, all while maintaining a positive attitude.',
-    image: '/dianneFierheller.jpg',
+    image: '/dianneFierheller.JPG',
   },
   {
     id: 2,
@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
     position:
       'Co-Director, Computing and Financial Management at University of Waterloo',
     text: 'Placeholder',
-    image: '/jamesThompson.jpg',
+    image: '/jamesThompson.JPG',
   },
   {
     id: 3,
