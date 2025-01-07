@@ -4,11 +4,12 @@ import React, { useEffect, useState } from 'react';
 import styles from './ParticleBackground.module.css';
 
 const PARTICLE_NUM = 100;
-const PARTICLE_MAX_WIDTH = 15;
+const PARTICLE_MAX_WIDTH = 30;
 
 interface Particle {
   style: React.CSSProperties;
   keyframes: string;
+  color: string;
 }
 
 const ParticleBackground: React.FC = () => {
@@ -39,12 +40,20 @@ const ParticleBackground: React.FC = () => {
         animationDelay: `${delay}ms`,
       };
 
-      return { style, keyframes };
+      let color: string;
+      if (i % 3 === 0) {
+        color = 'light'
+      } else if (i % 3 === 1) {
+        color = 'purple'
+      } else {
+        color = 'red'
+      }
+
+      return { style, keyframes, color };
     });
 
     setParticles(newParticles);
 
-    // Inject keyframes into the document
     const styleElement = document.createElement('style');
     styleElement.innerHTML = newParticles.map((p) => p.keyframes).join('\n');
     document.head.appendChild(styleElement);
@@ -62,7 +71,7 @@ const ParticleBackground: React.FC = () => {
           className={styles.circleContainer}
           style={particle.style}
         >
-          <div className={styles.circle}></div>
+          <div className={`${styles.circle} ${styles[particle.color]}`}></div>
         </div>
       ))}
     </div>

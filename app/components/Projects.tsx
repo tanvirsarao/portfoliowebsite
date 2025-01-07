@@ -1,15 +1,15 @@
 'use client';
 
-import Image from 'next/image';
+import { useState, useRef } from 'react';
+import YouTube from 'react-youtube';
 import { Github } from 'lucide-react';
-import { motion } from 'framer-motion';
-import InteractiveTitle from './InteractiveTitle';
+import { motion, useInView } from 'framer-motion';
 
 interface Project {
   title: string;
   description: string | string[];
   tags: Array<{ name: string; color: string }>;
-  image: string;
+  youtubeId: string;
   github: string;
 }
 
@@ -35,8 +35,8 @@ const Projects: React.FC = () => {
         { name: 'Express.js', color: 'bg-gray-600' },
         { name: 'MySQL', color: 'bg-blue-600' },
       ],
-      image: '/placeholder.svg?height=200&width=400',
-      github: 'https://github.com/yourusername/tripincento',
+      youtubeId: 'NpEaa2P7qZI',
+      github: 'https://github.com/yourusername/natours',
     },
     {
       title: 'AI Financial Portfolio Advisor - 3rd Place Winner',
@@ -52,7 +52,7 @@ const Projects: React.FC = () => {
         { name: 'Pandas', color: 'bg-blue-400' },
         { name: 'NumPy', color: 'bg-orange-400' },
       ],
-      image: '/CFMProject.PNG?height=200&width=400',
+      youtubeId: 'NpEaa2P7qZI',
       github: 'https://github.com/tanvirsarao/stock-robo-advisor',
     },
     {
@@ -67,110 +67,160 @@ const Projects: React.FC = () => {
         { name: 'Express.js', color: 'bg-teal-500' },
         { name: 'MySQL', color: 'bg-gray-700' },
       ],
-      image: '/tripIncento.PNG?height=200&width=400',
+      youtubeId: 'NpEaa2P7qZI',
       github: 'https://github.com/tanvirsarao/tripincento-api',
     },
     {
       title: 'Doctors on Dial - JamHacks 8 Winner',
-      description: 'Description of Project 4',
+      description: 'An innovative telemedicine platform connecting patients with doctors for virtual consultations, winning first place at JamHacks 8.',
       tags: [
         { name: 'Vue.js', color: 'bg-green-500' },
         { name: 'Express', color: 'bg-gray-600' },
         { name: 'MySQL', color: 'bg-blue-600' },
       ],
-      image: '/placeholder.svg?height=200&width=400',
-      github: 'https://github.com/yourusername/project4',
+      youtubeId: 'NpEaa2P7qZI',
+      github: 'https://github.com/yourusername/doctors-on-dial',
     },
   ];
 
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
-        <InteractiveTitle
-          className="text-6xl font-bold mb-12 text-white"
-          alignment="center"
-        >
+        <h1 className="text-6xl font-bold mb-12 text-white w-full text-center">
           Projects
-        </InteractiveTitle>
+        </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="bg-gray-800/50 rounded-lg shadow-md overflow-hidden"
-              whileHover={{
-                y: -10,
-                boxShadow:
-                  '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-              }}
-              transition={{ duration: 0.3 }}
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={200}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <div className="flex justify-between items-center mb-2">
-                  <h3 className="text-xl font-semibold text-white">
-                    {project.title}
-                  </h3>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:text-gray-400 flex items-center"
-                  >
-                    <span className="mr-2">GitHub</span>
-                    <Github size={24} />
-                  </a>
-                </div>
-                <ul className="list-disc pl-5 mb-4">
-                  {Array.isArray(project.description) ? (
-                    project.description.map((item, index) => (
-                      <li key={index} className="text-gray-200 mb-2">
-                        {item.split('**').map((part, i) =>
-                          i % 2 === 0 ? (
-                            part
-                          ) : (
-                            <span key={i} className="font-bold text-white">
-                              {part}
-                            </span>
-                          )
-                        )}
-                      </li>
-                    ))
-                  ) : (
-                    <li className="text-gray-200">
-                      {typeof project.description === 'string' &&
-                        project.description.split('**').map((part, i) =>
-                          i % 2 === 0 ? (
-                            part
-                          ) : (
-                            <span key={i} className="font-bold text-white">
-                              {part}
-                            </span>
-                          )
-                        )}
-                    </li>
-                  )}
-                </ul>
-                <div>
-                  {project.tags.map((tag, tagIndex) => (
-                    <ProjectTag
-                      key={tagIndex}
-                      name={tag.name}
-                      color={tag.color}
-                    />
-                  ))}
-                </div>
-              </div>
-            </motion.div>
+            <ProjectItem 
+              key={index} 
+              project={project}
+            />
           ))}
         </div>
       </div>
     </section>
+  );
+};
+
+const ProjectItem: React.FC<{ project: Project }> = ({ project }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  return (
+    <motion.div
+      ref={ref}
+      className="bg-gray-800/50 rounded-lg shadow-md overflow-hidden"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
+      transition={{ duration: 0.5, delay: 0.2 }}
+      whileHover={{
+        y: -10,
+        boxShadow:
+          '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      }}
+    >
+      <div 
+        className="relative aspect-video cursor-pointer overflow-hidden" 
+        onClick={() => setIsPlaying(!isPlaying)}
+      >
+        <div className="absolute inset-0 w-full h-full">
+          {isPlaying ? (
+            <YouTube
+              videoId={project.youtubeId}
+              opts={{
+                width: '100%',
+                height: '100%',
+                playerVars: {
+                  autoplay: 1,
+                  modestbranding: 1,
+                  rel: 0,
+                },
+              }}
+              className="absolute top-0 left-0 w-full h-full"
+              onEnd={() => setIsPlaying(false)}
+            />
+          ) : (
+            <div 
+              className="w-full h-full bg-cover bg-center" 
+              style={{
+                backgroundImage: `url(https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg)`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+              }}
+            >
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center transition-transform transform hover:scale-110">
+                  <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M8 5v10l8-5-8-5z" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+      <div className="px-6 py-4">
+        <div className="flex items-center mb-3">
+          <h3 className="font-bold text-white text-xl">
+            {project.title}
+          </h3>
+        </div>
+        <ul className="list-disc pl-5 mb-4">
+          {Array.isArray(project.description) ? (
+            project.description.map((item: string, index: number) => (
+              <li
+                key={index}
+                className="text-sm leading-snug tracking-wide text-gray-300 text-opacity-100 mb-1"
+              >
+                {item.split('**').map((part, i) =>
+                  i % 2 === 0 ? (
+                    part
+                  ) : (
+                    <span key={i} className="font-bold text-white">
+                      {part}
+                    </span>
+                  )
+                )}
+              </li>
+            ))
+          ) : (
+            <li className="text-sm leading-snug tracking-wide text-gray-300 text-opacity-100 mb-1">
+              {typeof project.description === 'string' &&
+                project.description.split('**').map((part, i) =>
+                  i % 2 === 0 ? (
+                    part
+                  ) : (
+                    <span key={i} className="font-bold text-white">
+                      {part}
+                    </span>
+                  )
+                )}
+            </li>
+          )}
+        </ul>
+        <div className="mt-4">
+          {project.tags.map((tag, tagIndex) => (
+            <ProjectTag
+              key={tagIndex}
+              name={tag.name}
+              color={tag.color}
+            />
+          ))}
+        </div>
+        <div className="mt-4">
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-blue-400 hover:text-blue-300 transition-colors duration-300"
+          >
+            <Github size={16} className="mr-2" />
+            View on GitHub
+          </a>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 

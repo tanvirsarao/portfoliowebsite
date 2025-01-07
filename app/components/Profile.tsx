@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import InteractiveTitle from './InteractiveTitle';
 
 const phrases = [
   'a full stack developer.',
@@ -52,20 +51,19 @@ const Hero: React.FC = () => {
   }, [text, phraseIndex, isDeleting, isWaiting]);
 
   return (
-    <section className="min-h-screen flex items-center py-24">
+    <section className="min-h-screen flex items-center">
       <div className="container mx-auto px-4 flex flex-col-reverse md:flex-row items-center justify-between gap-8">
         <motion.div
-          className="md:w-3/5 space-y-6 mt-24"
+          className="md:w-3/5 space-y-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <InteractiveTitle
+          <h1
             className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight w-full text-white"
-            alignment="left"
           >
             Hi, I am Tanvir Sarao.
-          </InteractiveTitle>
+          </h1>
 
           <h2 className="text-3xl md:text-4xl text-blue-100 font-medium">
             {text}
@@ -74,41 +72,41 @@ const Hero: React.FC = () => {
 
           <p className="text-lg md:text-xl text-blue-100/80 max-w-2xl">
             I'm a student at the{' '}
-            <span className="font-bold relative group">
+            <a href="https://uwaterloo.ca/" target="_blank" className="font-bold relative group">
               <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 University of Waterloo
               </span>
               <span className="absolute inset-0 text-blue-100/80 group-hover:opacity-0 transition-opacity duration-300">
                 University of Waterloo
               </span>
-            </span>{' '}
+            </a>{' '}
             double majoring in{' '}
-            <span className="font-bold relative group">
-              <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <a href="https://uwaterloo.ca/computing-financial-management/future-students" target="_blank" className="font-bold relative group">
+              <span className="bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ">
                 Computer Science and Finance
               </span>
               <span className="absolute inset-0 text-blue-100/80 group-hover:opacity-0 transition-opacity duration-300">
                 Computer Science and Finance
               </span>
-            </span>
+            </a>
             . I strive to use my skills to make a real impact in the world.{' '}
             <span className="text-purple-300">Please take a look around.</span>
           </p>
         </motion.div>
 
         <motion.div
-          className="md:w-2/5 mb-8 md:mb-0 -mt-24"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1.5, scale: 1 }}
-          transition={{ duration: 5 }}
+          className="md:w-2/5 -mt-20"
+          initial={{ opacity: 0, scale: 0.85 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 4 }}
         >
-          <div className="relative w-80 h-80 md:w-96 md:h-96 mx-auto">
+          <div className="relative w-96 h-96 md:w-[500px] md:h-[650px] mx-auto">
             <Image
               src="/profileImage.jpg"
               alt="Profile"
-              width={600}
-              height={600}
-              className="rounded-2xl object-cover"
+              width={800}
+              height={800}
+              className="rounded-2xl object-cover h-auto max-w-lg transition-all duration-1000 cursor-pointer hover:filter hover:blur-sm profile-image"
               priority
             />
           </div>
@@ -119,3 +117,4 @@ const Hero: React.FC = () => {
 };
 
 export default Hero;
+

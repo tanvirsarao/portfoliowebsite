@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
+import { Button } from '@/app/components/ui/button';
 import { motion } from 'framer-motion';
 
 const Navbar = () => {
@@ -10,23 +10,23 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-[calc(100vw-100%)] z-40 bg-black bg-opacity-80 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold">
+        <Link href="/" className="text-2xl font-bold navbar-brand">
           <div className="flex space-x-1">
             {letters.map((letter, index) => (
               <motion.span
                 key={index}
-                className="font-orbitron font-black text-3xl bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent hover:text-white transition-colors duration-300"
-                whileHover={{
+                className="text-white text-3xl font-bold"
+                whileHover={{ 
                   scale: 1.2,
-                  rotate: 360,
-                  transition: { duration: 0.3 },
+                  filter: "brightness(1.5)",
+                  textShadow: "0 0 20px rgba(255,255,255,0.8)",
+                  transition: { duration: 0.2 }
                 }}
-                whileTap={{ scale: 0.9 }}
                 initial={{ opacity: 0, y: -20 }}
-                animate={{
-                  opacity: 1,
+                animate={{ 
+                  opacity: 1, 
                   y: 0,
-                  transition: { delay: index * 0.1 },
+                  transition: { delay: index * 0.1 }
                 }}
               >
                 {letter}
@@ -35,12 +35,6 @@ const Navbar = () => {
           </div>
         </Link>
         <div className="hidden md:flex space-x-6 items-center text-xl">
-          <Link
-            href="#about"
-            className="text-xl text-gray-300 hover:text-white transition-colors duration-200"
-          >
-            about
-          </Link>
           <Link
             href="#skills"
             className="text-xl text-gray-300 hover:text-white transition-colors duration-200"
@@ -67,7 +61,7 @@ const Navbar = () => {
           </Link>
 
           <Link
-            href="#testimonials"
+            href="#contact"
             className="text-xl text-gray-300 hover:text-white transition-colors duration-200"
           >
             contact

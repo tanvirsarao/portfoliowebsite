@@ -4,7 +4,6 @@ import { useRef } from 'react';
 import Image from 'next/image';
 import { Globe } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
-import InteractiveTitle from './InteractiveTitle';
 
 const ExperienceTag = ({ name, color }: { name: string; color: string }) => (
   <span
@@ -16,23 +15,6 @@ const ExperienceTag = ({ name, color }: { name: string; color: string }) => (
 
 const Experience: React.FC = () => {
   const experiences = [
-    {
-      title: 'Junior Software Engineer',
-      company: 'Agent Edge',
-      period: 'September 2024 - Present',
-      description: [
-        'Sample jot notes **bold**.',
-        'Sample jot notes **bold**.',
-        'Sample jot notes **bold**.',
-      ],
-      skills: [
-        { name: 'React', color: 'bg-blue-500' },
-        { name: 'Node.js', color: 'bg-green-600' },
-        { name: 'AWS', color: 'bg-yellow-500' },
-      ],
-      image: '/AgentEdgeLogo.JPG?height=100&width=100',
-      website: 'https://agentedge.ca',
-    },
     {
       title: 'Software Engineer',
       company: 'Hackathons Canada',
@@ -49,6 +31,23 @@ const Experience: React.FC = () => {
       ],
       image: '/hackathonsCanadaLogo.jpg?height=100&width=100',
       website: 'https://hackathonscanada.com/',
+    },
+    {
+      title: 'Junior Software Engineer',
+      company: 'Agent Edge',
+      period: 'October 2024 - Present',
+      description: [
+        'Sample jot notes **bold**.',
+        'Sample jot notes **bold**.',
+        'Sample jot notes **bold**.',
+      ],
+      skills: [
+        { name: 'React', color: 'bg-blue-500' },
+        { name: 'Node.js', color: 'bg-green-600' },
+        { name: 'AWS', color: 'bg-yellow-500' },
+      ],
+      image: '/AgentEdgeLogo.JPG?height=100&width=100',
+      website: 'https://agentedge.ca',
     },
     {
       title: 'Software Engineering Instructor',
@@ -82,9 +81,9 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto px-4">
-        <InteractiveTitle className="text-6xl font-bold mb-12 text-white w-full">
+        <h1 className="text-6xl font-bold mb-12 text-white w-full text-center">
           Experience
-        </InteractiveTitle>
+        </h1>
         <div className="relative">
           {/* Vertical line */}
           <div
@@ -111,11 +110,11 @@ const ExperienceItem: React.FC<{ experience: any; index: number }> = ({
   return (
     <div
       ref={ref}
-      className={`mb-8 flex justify-between items-center w-full ${
+      className={`mb-8 flex justify-between items-center w-full gap-8 ${
         index % 2 === 0 ? 'flex-row-reverse left-timeline' : 'right-timeline'
       }`}
     >
-      <div className="order-1 w-5/12" />
+      <div className="order-1 w-1/2" />
       <motion.div
         className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-4 h-4 rounded-full"
         initial={{ opacity: 0, scale: 0 }}
@@ -123,7 +122,7 @@ const ExperienceItem: React.FC<{ experience: any; index: number }> = ({
         transition={{ duration: 0.5, delay: 0.5 }}
       />
       <motion.div
-        className="order-1 bg-gray-800/50 rounded-lg shadow-md overflow-hidden w-5/12"
+        className="order-1 bg-gray-800/50 rounded-lg shadow-md overflow-hidden w-1/2"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
         transition={{ duration: 0.5, delay: 0.2 }}

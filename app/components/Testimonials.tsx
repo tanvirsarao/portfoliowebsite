@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import InteractiveTitle from './InteractiveTitle';
 
 interface Testimonial {
   id: number;
@@ -24,14 +23,14 @@ const testimonials: Testimonial[] = [
     id: 2,
     name: 'James Thompson, Ph. D.',
     position:
-      'Co-Director, Computing and Financial Management at University of Waterloo',
+      'Co-Director, Computing and Financial Management @ University of Waterloo',
     text: 'Placeholder',
     image: '/jamesThompson.JPG',
   },
   {
     id: 3,
     name: 'Puneet Kumar',
-    position: 'Senior Engineer at Agent Edge',
+    position: 'Senior Developer @ RBC, Managed Tanvir @ Agent Edge',
     text: 'Placeholder',
     image: '/placeholder.svg',
   },
@@ -41,12 +40,10 @@ const Testimonials: React.FC = () => {
   return (
     <section id="testimonials" className="py-20 relative">
       <div className="container mx-auto px-4">
-        <InteractiveTitle
-          className="text-6xl font-bold mb-16 text-white"
-          alignment="center"
-        >
+        <h1
+          className="text-6xl font-bold mb-16 text-white text-center">
           Testimonials
-        </InteractiveTitle>
+        </h1>
 
         {/* Vertical dotted line */}
         <div className="absolute left-1/2 transform -translate-x-1/2 w-px h-[80%] top-[20%] border-l-2 border-dashed border-purple-400/30" />

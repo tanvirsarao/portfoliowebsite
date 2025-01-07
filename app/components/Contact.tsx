@@ -3,16 +3,14 @@
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { MdEmail } from 'react-icons/md';
 import { motion } from 'framer-motion';
-import { IconType } from 'react-icons';
-import InteractiveTitle from './InteractiveTitle';
 
 const Contact: React.FC = () => {
   return (
     <section id="contact" className="py-20 bg-gray-900/50">
       <div className="container mx-auto px-4">
-        <InteractiveTitle className="text-6xl font-bold mb-12 text-center text-white w-full">
+        <h1 className="text-6xl font-bold mb-12 text-center text-white w-full">
           Contact Me
-        </InteractiveTitle>
+        </h1>
         <div className="flex justify-center space-x-12 mb-12">
           <a
             href="https://github.com/tanvirsarao"

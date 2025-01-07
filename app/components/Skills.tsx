@@ -34,7 +34,6 @@ import {
 import { DiVisualstudio } from 'react-icons/di';
 import { TbBrandNextjs } from 'react-icons/tb';
 import { motion } from 'framer-motion';
-import InteractiveTitle from './InteractiveTitle';
 
 const SkillIcon = ({
   icon,
@@ -100,9 +99,9 @@ const Skills = () => {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
-        <InteractiveTitle className="text-6xl font-bold mb-12 text-white w-full">
+        <h1 className="text-6xl font-bold mb-12 text-white w-full text-center">
           Skills
-        </InteractiveTitle>
+        </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-12 mb-16">
           {skills.map((skill, index) => (
             <SkillIcon
@@ -113,9 +112,9 @@ const Skills = () => {
             />
           ))}
         </div>
-        <InteractiveTitle className="text-6xl font-bold mb-10 text-white w-full">
+        <h1 className="text-6xl font-bold mb-10 text-white w-full text-center">
           Developer Tools
-        </InteractiveTitle>
+        </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-12">
           {devTools.map((tool, index) => (
             <SkillIcon
