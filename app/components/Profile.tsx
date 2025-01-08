@@ -106,7 +106,7 @@ const Hero: React.FC = () => {
               alt="Profile"
               width={800}
               height={800}
-              className="rounded-2xl object-cover h-auto max-w-lg transition-all duration-1000 cursor-pointer hover:filter hover:blur-sm profile-image"
+              className="rounded-2xl object-cover h-auto max-w-lg transition-all duration-1000 cursor-pointer hover:filter hover:blur-sm"
               priority
             />
           </div>

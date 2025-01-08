@@ -10,7 +10,7 @@ const Navbar = () => {
   return (
     <nav className="absolute top-0 left-0 right-[calc(100vw-100%)] z-40 bg-black bg-opacity-80 backdrop-blur-sm">
       <div className="container mx-auto px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-bold navbar-brand">
+        <Link href="/" className="text-2xl font-bold">
           <div className="flex space-x-1">
             {letters.map((letter, index) => (
               <motion.span

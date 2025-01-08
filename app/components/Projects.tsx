@@ -28,7 +28,6 @@ const Projects: React.FC = () => {
       description: [
         'Built RESTful API architecture using Node.js, Express.js and MySQL to integrate user rewards system with local businesses and process transit usage data.',
         'Implemented **CORS** exceptions, **HTTPS** protocol and **JWT** authentication with password encryption and engineered responsive front-end with HTML/CSS and deployed on **AWS EC2** servers.',
-        'Optimized 15+ bus routes through efficiency metrics and Google API heatmap visualizations.',
       ],
       tags: [
         { name: 'Node.js', color: 'bg-green-600' },

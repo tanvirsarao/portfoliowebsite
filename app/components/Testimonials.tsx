@@ -21,11 +21,11 @@ const testimonials: Testimonial[] = [
   },
   {
     id: 2,
-    name: 'James Thompson, Ph. D.',
+    name: 'David Ha, CPA, CA',
     position:
-      'Co-Director, Computing and Financial Management @ University of Waterloo',
+      'Professor & Co-Director of MAcc @ University of Waterloo',
     text: 'Placeholder',
-    image: '/jamesThompson.JPG',
+    image: '/placeholder.svg',
   },
   {
     id: 3,
