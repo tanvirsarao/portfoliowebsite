@@ -81,13 +81,13 @@ const Experience: React.FC = () => {
   return (
     <section id="experience" className="py-20">
       <div className="container mx-auto px-4">
-        <h1 className="text-6xl font-bold mb-12 text-white w-full text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-12 text-white w-full text-center">
           Experience
         </h1>
         <div className="relative">
-          {/* Vertical line */}
+          {/* Vertical line - Only visible on md and up */}
           <div
-            className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-700"
+            className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gray-700"
             aria-hidden="true"
           />
 
@@ -110,19 +110,19 @@ const ExperienceItem: React.FC<{ experience: any; index: number }> = ({
   return (
     <div
       ref={ref}
-      className={`mb-8 flex justify-between items-center w-full gap-8 ${
-        index % 2 === 0 ? 'flex-row-reverse left-timeline' : 'right-timeline'
+      className={`mb-8 flex flex-col md:flex-row justify-between items-center w-full gap-8 ${
+        index % 2 === 0 ? 'md:flex-row-reverse left-timeline' : 'right-timeline'
       }`}
     >
-      <div className="order-1 w-1/2" />
+      <div className="hidden md:block order-1 w-5/12" />
       <motion.div
-        className="z-20 flex items-center order-1 bg-gray-800 shadow-xl w-4 h-4 rounded-full"
+        className="hidden md:flex items-center order-1 bg-gray-800 shadow-xl w-4 h-4 rounded-full"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: isInView ? 1 : 0, scale: isInView ? 1 : 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
       />
       <motion.div
-        className="order-1 bg-gray-800/50 rounded-lg shadow-md overflow-hidden w-1/2"
+        className="order-1 bg-gray-800/50 rounded-lg shadow-md overflow-hidden w-full md:w-5/12"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: isInView ? 1 : 0, y: isInView ? 0 : 50 }}
         transition={{ duration: 0.5, delay: 0.2 }}
@@ -200,3 +200,4 @@ const ExperienceItem: React.FC<{ experience: any; index: number }> = ({
 };
 
 export default Experience;
+

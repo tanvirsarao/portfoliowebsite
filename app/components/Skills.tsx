@@ -29,7 +29,6 @@ import {
   SiPostgresql,
   SiTypescript,
   SiPandas,
-  SiFastapi,
 } from 'react-icons/si';
 import { DiVisualstudio } from 'react-icons/di';
 import { TbBrandNextjs } from 'react-icons/tb';
@@ -89,7 +88,6 @@ const Skills = () => {
     { name: 'SDLC', icon: <FaCode />, color: 'text-purple-400' },
     { name: 'Jupyter Notebook', icon: <SiJupyter />, color: 'text-orange-400' },
     { name: 'Figma', icon: <SiFigma />, color: 'text-pink-400' },
-    { name: '', icon: '', color: '' },
     { name: 'Postman', icon: <SiPostman />, color: 'text-orange-500' },
     { name: 'GitHub', icon: <FaGithub />, color: 'text-white' },
     { name: 'Visual Studio', icon: <DiVisualstudio />, color: 'text-blue-600' },
@@ -112,13 +110,23 @@ const Skills = () => {
             />
           ))}
         </div>
-        <h1 className="text-6xl font-bold mb-10 text-white w-full text-center">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-10 text-white w-full text-center">
           Developer Tools
         </h1>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-12">
-          {devTools.map((tool, index) => (
+          {devTools.slice(0, 6).map((tool, index) => (
             <SkillIcon
               key={index}
+              icon={tool.icon}
+              name={tool.name}
+              color={tool.color}
+            />
+          ))}
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-12 mt-12 lg:place-items-center lg:mx-auto lg:max-w-4xl">
+          {devTools.slice(6).map((tool, index) => (
+            <SkillIcon
+              key={index + 6}
               icon={tool.icon}
               name={tool.name}
               color={tool.color}

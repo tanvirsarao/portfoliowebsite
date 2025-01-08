@@ -27,15 +27,15 @@ const LoadingScreen = () => {
         <motion.div
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900"
+          transition={{ duration: 1 }} 
+          className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900 px-4"
         >
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 5 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1 }}
-            className="text-6xl font-mono text-purple-500"
+            transition={{ duration: 1 }} 
+            className="text-3xl md:text-6xl font-mono text-purple-500 text-center"
           >
             {text}
           </motion.div>
@@ -46,3 +46,4 @@ const LoadingScreen = () => {
 };
 
 export default LoadingScreen;
+
