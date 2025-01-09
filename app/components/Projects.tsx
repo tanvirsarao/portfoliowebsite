@@ -71,14 +71,14 @@ const Projects: React.FC = () => {
     },
     {
       title: 'Doctors on Dial - JamHacks 8 Winner',
-      description: 'An innovative telemedicine platform connecting patients with doctors for virtual consultations, winning first place at JamHacks 8.',
+      description: 'An innovative telemedicine platform connecting patients with doctors for virtual consultations, winning at JamHacks 8.',
       tags: [
         { name: 'Vue.js', color: 'bg-green-500' },
         { name: 'Express', color: 'bg-gray-600' },
         { name: 'MySQL', color: 'bg-blue-600' },
       ],
       youtubeId: 'NpEaa2P7qZI',
-      github: 'https://github.com/yourusername/doctors-on-dial',
+      github: 'https://dorahacks.io/buidl/13402/',
     },
   ];
 

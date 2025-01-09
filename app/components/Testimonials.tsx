@@ -133,24 +133,24 @@ const testimonials: Testimonial[] = [
   {
     id: 1,
     name: 'Dr. Dianne Fierheller',
-    position: 'Project Co-Lead @ Trillium Health Partners',
+    position: 'Managed Tanvir as Project Co-Lead @ Trillium Health Partners',
     text: 'Tanvir has a warm and friendly rapport with people of all ages and can connect, fit in, and apply himself accordingly. Tanvir\'s persona is one of integrity, grit, and resilience. He is a truly dedicated individual and accomplishes tasks with great initiative and focus, all while maintaining a positive attitude.',
     image: '/dianneFierheller.JPG',
   },
-  {
-    id: 2,
-    name: 'David Ha, CPA, CA',
-    position:
-      'Professor & Co-Director of MAcc @ University of Waterloo',
-    text: 'Placeholder',
-    image: '/placeholder.svg',
-  },
+  // {
+  //   id: 2,
+  //   name: 'Name',
+  //   position:
+  //     'Position',
+  //   text: 'Tanvir\'s ability to develop strong relationships with others and to handle multiple projects and priorities make him a great candidate in any application.',
+  //   image: '/placeholder.svg',
+  // },
   {
     id: 3,
     name: 'Puneet Kumar',
-    position: 'Senior Developer @ RBC, Managed Tanvir @ Agent Edge',
-    text: 'Placeholder',
-    image: '/placeholder.svg',
+    position: 'Mentored Tanvir at AgentEdge Inc, Senior Software Engineer @ RBC',
+    text: 'Tanvir is a hardworking and motivated software engineer who made significant contributions to backend development at Agent Edge under my guidance. I highly recommend him - a valuable asset to any organization.',
+    image: '/puneetKumar.PNG',
   },
 ];
 
