@@ -127,6 +127,7 @@ import { motion } from 'framer-motion';
 
 const phrases = [
   'a full stack developer.',
+  'a lifelong learner.',
   'a problem solver.',
   'a math enthusiast.',
   'an innovator.',
