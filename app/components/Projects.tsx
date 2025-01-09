@@ -24,18 +24,21 @@ const ProjectTag = ({ name, color }: { name: string; color: string }) => (
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: 'NATours',
+      title: 'TanVentures',
       description: [
-        'Built RESTful API architecture using Node.js, Express.js and MySQL to integrate user rewards system with local businesses and process transit usage data.',
-        'Implemented **CORS** exceptions, **HTTPS** protocol and **JWT** authentication with password encryption and engineered responsive front-end with HTML/CSS and deployed on **AWS EC2** servers.',
+        'Developed an online tour marketplace, by building a secure **RESTful API** with Node & Express, implementing **JWT** authentication with cookies, password **encryption**, **HTTPS & CORS** principals',
+        'Engineered a **server-side** rendered frontend with **Pug** templating and pagination integrated with **Nodemailer** for password reset emails & developed unhandled rejection, uncaught exception & **SIGTERM** responses',
+        'Utilized the **MongoDB Aggregation Pipeline** to generate advanced course & **user statistics**'
       ],
       tags: [
+        { name: 'Pug', color: 'bg-yellow-600' },
         { name: 'Node.js', color: 'bg-green-600' },
         { name: 'Express.js', color: 'bg-gray-600' },
-        { name: 'MySQL', color: 'bg-blue-600' },
+        { name: 'MongoDB', color: 'bg-blue-600' },
+        { name: 'Mongoose', color: 'bg-pink-600' },
       ],
-      youtubeId: 'NpEaa2P7qZI',
-      github: 'https://github.com/yourusername/natours',
+      youtubeId: '-plKKTOdgeo',
+      github: 'https://github.com/tanvirsarao/tanventures/',
     },
     {
       title: 'AI Financial Portfolio Advisor - 3rd Place Winner',
@@ -51,7 +54,7 @@ const Projects: React.FC = () => {
         { name: 'Pandas', color: 'bg-blue-400' },
         { name: 'NumPy', color: 'bg-orange-400' },
       ],
-      youtubeId: 'NpEaa2P7qZI',
+      youtubeId: 'aTZCfYDAefs',
       github: 'https://github.com/tanvirsarao/stock-robo-advisor',
     },
     {
@@ -59,25 +62,27 @@ const Projects: React.FC = () => {
       description: [
         'Built RESTful API architecture using Node.js, Express.js and MySQL to integrate user rewards system with local businesses and process transit usage data.',
         'Implemented **CORS** exceptions, **HTTPS** protocol and **JWT** authentication with password encryption and engineered responsive front-end with HTML/CSS and deployed on **AWS EC2** servers.',
-        'Optimized 15+ bus routes through efficiency metrics and Google API heatmap visualizations.',
       ],
       tags: [
         { name: 'Node.js', color: 'bg-black' },
         { name: 'Express.js', color: 'bg-teal-500' },
-        { name: 'MySQL', color: 'bg-gray-700' },
+        { name: 'MySQL', color: 'bg-green-700' },
+        { name: 'AWS', color: 'bg-red-700' },
       ],
-      youtubeId: 'NpEaa2P7qZI',
+      youtubeId: 'MLfwr0SsOCw',
       github: 'https://github.com/tanvirsarao/tripincento-api',
     },
     {
       title: 'Doctors on Dial - JamHacks 8 Winner',
-      description: 'An innovative telemedicine platform connecting patients with doctors for virtual consultations, winning at JamHacks 8.',
+      description: ['Utilized **CNN deep learning** model using Python, achieving **85% accuracy** in early cancer detection from microscopic tissue images, reducing diagnosis time from weeks to seconds & improving patient outcomes',
+        'Deployed **smart contracts** with **NEAR** in Javascript, ensuring safe and efficient transfer of medical records, with **transaction hashes** viewable from user side front end development.'],  
       tags: [
-        { name: 'Vue.js', color: 'bg-green-500' },
-        { name: 'Express', color: 'bg-gray-600' },
+        { name: 'Python', color: 'bg-green-500' },
+        { name: 'MATLAB', color: 'bg-purple-600' },
+        { name: 'NEAR', color: 'bg-red-600' },
         { name: 'MySQL', color: 'bg-blue-600' },
       ],
-      youtubeId: 'NpEaa2P7qZI',
+      youtubeId: '0WWbA4khKGc',
       github: 'https://dorahacks.io/buidl/13402/',
     },
   ];
