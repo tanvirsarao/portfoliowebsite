@@ -148,7 +148,7 @@ const ProjectItem: React.FC<{ project: Project }> = ({ project }) => {
             <div 
               className="w-full h-full bg-cover bg-center" 
               style={{
-                backgroundImage: `url(https://img.youtube.com/vi/${project.youtubeId}/maxresdefault.jpg)`,
+                backgroundImage: `url(https://img.youtube.com/vi/${project.youtubeId}/hqdefault.jpg)`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
