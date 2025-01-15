@@ -16,6 +16,20 @@ const ExperienceTag = ({ name, color }: { name: string; color: string }) => (
 const Experience: React.FC = () => {
   const experiences = [
     {
+      title: 'Incoming AI Optimization Engineer',
+      company: 'Arnii Fitness',
+      period: 'January 2025 - Present',
+      description: [
+        'Working in the **Personalized Fitness Insights** team to develop and optimize AI algorithms, serving **1000+ users** with real-time interactions and tailored insights.',
+        'Key tasks include integrating Supabase AI vectors, RAG resources, and Buildship’s OpenAI stream functionalities to enhance accuracy and efficiency while optimizing token costs.',
+        'Arnii is a Startup in League of Innovators Batch 13, Canada’s #1 Startup Accelerator for Founders Under 30.',
+      ],
+      skills: [
+      ],
+      image: '/arnii.jpg?height=100&width=100',
+      website: 'https://www.arniifitness.io/',
+    },
+    {
       title: 'Software Engineer',
       company: 'Hackathons Canada',
       period: 'November 2024 - Present',
