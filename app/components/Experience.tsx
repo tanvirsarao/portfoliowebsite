@@ -16,7 +16,7 @@ const ExperienceTag = ({ name, color }: { name: string; color: string }) => (
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: 'Incoming AI Optimization Engineer',
+      title: 'Artificial Intelligence Optimization Engineer',
       company: 'Arnii Fitness',
       period: 'January 2025 - Present',
       description: [
