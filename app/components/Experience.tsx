@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
       website: 'https://hackathonscanada.com/',
     },
     {
-      title: 'Junior Software Engineer',
+      title: 'Software Engineer',
       company: 'AgentEdge Inc',
       period: 'August 2024 - October 2024',
       description: [
